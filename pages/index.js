@@ -1,17 +1,22 @@
 import Banner from "@/components/Banner";
+import FotoKegiatan from "@/components/FotoKegiatan";
+import KegiatanCard from "@/components/KegiatanCard";
 import UserLayout from "@/components/UserLayout";
 import VisiMisi from "@/components/VisiMisi";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <UserLayout>
-      <div className="bg-light">
-        <Banner />
-        <div className="flex flex-col items-center justify-center">
-          <VisiMisi/>
-        </div>
-      </div>
+      <Banner />
+      <VisiMisi />
+      <FotoKegiatan>
+        <KegiatanCard/>
+        <KegiatanCard/>
+        <KegiatanCard/>
+        <KegiatanCard/>
+        <KegiatanCard/>
+        <KegiatanCard/>
+      </FotoKegiatan>
     </UserLayout>
   );
 }
