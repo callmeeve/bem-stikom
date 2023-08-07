@@ -3,7 +3,7 @@ import React from "react";
 
 export default function KegiatanCard() {
   return (
-    <div className="flex flex-col p-8 rounded-xl bg-white shadow-xl w-96 md:w-auto">
+    <div className="flex flex-col p-8 rounded-xl bg-white shadow-lg w-96 md:w-auto">
       <Image
         src="/foto2.jpg"
         className="w-full rounded"
