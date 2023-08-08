@@ -79,15 +79,15 @@ export default function Nav() {
   return (
     <Navbar className="top-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
       <div className="flex items-center justify-between text-blue-gray-900">
-        <div class="flex items-center">
+        <div className="flex items-center">
           <Image
             src="/bem.png"
-            class="mr-5"
+            className="mr-5"
             alt="Logo Bem"
             width={60}
             height={60}
           />
-          <Typography class="self-center text-xl font-semibold text-dark">
+          <Typography className="self-center text-xl font-semibold text-dark">
             BEM STIKOM PGRI BANYUWANGI
           </Typography>
         </div>
