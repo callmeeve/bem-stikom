@@ -2,29 +2,32 @@ import React, { useState } from "react";
 import Image from "next/image";
 import {
   HomeIcon,
-  InboxIcon,
-  UserIcon,
-  CalendarDaysIcon,
-  MagnifyingGlassIcon,
-  PresentationChartBarIcon,
-  DocumentIcon,
-  Cog6ToothIcon,
+  DocumentPlusIcon,
+  PhotoIcon,
+  ArrowLeftOnRectangleIcon
 } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const AdminLayout = ({ children }) => {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", icon: <HomeIcon className="w-6 h-6" /> },
-    { title: "Inbox", icon: <InboxIcon className="w-6 h-6" /> },
-    { title: "Accounts", icon: <UserIcon className="w-6 h-6" />, gap: true },
-    { title: "Schedule ", icon: <CalendarDaysIcon className="w-6 h-6" /> },
-    { title: "Search", icon: <MagnifyingGlassIcon className="w-6 h-6" /> },
+    { title: "Dashboard", icon: <HomeIcon className="w-6 h-6" />, url: "/" },
     {
-      title: "Analytics",
-      icon: <PresentationChartBarIcon className="w-6 h-6" />,
+      title: "Struktur Kabinet",
+      icon: <DocumentPlusIcon className="w-6 h-6" />,
+      url: "/kabinet",
     },
-    { title: "Files ", icon: <DocumentIcon className="w-6 h-6" />, gap: true },
-    { title: "Setting", icon: <Cog6ToothIcon className="w-6 h-6" /> },
+    {
+      title: "Banner",
+      icon: <PhotoIcon className="w-6 h-6" />,
+      url: "/banner",
+    },
+    {
+      title: "Log Out",
+      icon: <ArrowLeftOnRectangleIcon className="w-6 h-6" />,
+      gap: true,
+      url: "/banner",
+    },
   ];
   return (
     <div className="flex">
@@ -42,8 +45,10 @@ const AdminLayout = ({ children }) => {
           <Image src="/control.png" width={40} height={40} />
         </div>
         <div className="flex gap-x-4 items-center">
-          <img
+          <Image
             src="/bem.png"
+            width={300}
+            height={300}
             className={`cursor-pointer duration-500 w-10 h-10 ${
               open && "rotate-[360deg] w-10 h-10 pr-0.5"
             }`}
@@ -67,16 +72,18 @@ const AdminLayout = ({ children }) => {
               {/* Icon */}
               {Menu.icon}
               {/* Title */}
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                {Menu.title}
-              </span>
+              <Link href={Menu.url}>
+                <span
+                  className={`${!open && "hidden"} origin-left duration-200`}
+                >
+                  {Menu.title}
+                </span>
+              </Link>
             </li>
           ))}
         </ul>
       </div>
-      <div className="flex flex-col mx-10 mt-12">
-        {children}
-      </div>
+      <div className="h-full mx-auto mt-14">{children}</div>
     </div>
   );
 };

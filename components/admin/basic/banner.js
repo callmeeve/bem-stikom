@@ -25,15 +25,15 @@ export default function Sample() {
   }, []);
 
   return (
-    <div className="flex flex-row justify-start items-center mb-5">
+    <div className="flex flex-col items-start mb-5">
       <h1 className="text-xl font-bold my-4">Gambar Banner</h1>
-      <table className="w-96 text-sm text-left text-gray-500 rounded shadow-md ml-10">
+      <table className="w-96 text-sm text-left text-gray-500 rounded shadow-md">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
             <th scope="col" className="px-6 py-3">
               Image
             </th>
-            <th scope="col" className="px-6 py-3">
+            <th scope="row" className="px-6 py-3">
               Action
             </th>
           </tr>
