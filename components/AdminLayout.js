@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   HomeIcon,
   InboxIcon,
@@ -18,7 +19,10 @@ const AdminLayout = ({ children }) => {
     { title: "Accounts", icon: <UserIcon className="w-6 h-6" />, gap: true },
     { title: "Schedule ", icon: <CalendarDaysIcon className="w-6 h-6" /> },
     { title: "Search", icon: <MagnifyingGlassIcon className="w-6 h-6" /> },
-    { title: "Analytics", icon: <PresentationChartBarIcon className="w-6 h-6" /> },
+    {
+      title: "Analytics",
+      icon: <PresentationChartBarIcon className="w-6 h-6" />,
+    },
     { title: "Files ", icon: <DocumentIcon className="w-6 h-6" />, gap: true },
     { title: "Setting", icon: <Cog6ToothIcon className="w-6 h-6" /> },
   ];
@@ -29,12 +33,14 @@ const AdminLayout = ({ children }) => {
           open ? "w-72" : "w-[6rem] "
         } bg-dark min-h-screen p-5  pt-8 relative duration-300`}
       >
-        <img
-          src="/control.png"
-          className={`absolute cursor-pointer -right-3 top-10 w-7 border-dark
-           border-2 rounded-full  ${!open && "rotate-180"}`}
+        <div
+          className={`absolute cursor-pointer -right-3 top-10 w-7 border-dark text-dark border-2 rounded-full  ${
+            !open && "rotate-180"
+          }`}
           onClick={() => setOpen(!open)}
-        />
+        >
+          <Image src="/control.png" width={40} height={40} />
+        </div>
         <div className="flex gap-x-4 items-center">
           <img
             src="/bem.png"
@@ -54,7 +60,9 @@ const AdminLayout = ({ children }) => {
           {Menus.map((Menu, index) => (
             <li
               key={index}
-              className={`flex rounded-md p-2 cursor-pointer hover:bg-light hover:text-dark text-gray-300 text-sm items-center gap-x-4 ${Menu.gap ? "mt-9" : "mt-2"}`}
+              className={`flex rounded-md p-2 cursor-pointer hover:bg-light hover:text-dark text-gray-300 text-sm items-center gap-x-4 ${
+                Menu.gap ? "mt-9" : "mt-2"
+              }`}
             >
               {/* Icon */}
               {Menu.icon}
@@ -66,7 +74,7 @@ const AdminLayout = ({ children }) => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex mx-auto mt-16">{children}</div>
+      <div className="h-screen flex mx-auto mt-12">{children}</div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { Typography, List, ListItem } from "@material-tailwind/react";
 
 export default function VisiMisi() {
   return (
-    <div className="flex flex-col-reverse md:flex-row px-3 py-6 items-center justify-center bg-light">
+    <div className="flex flex-col-reverse md:flex-row px-3 py-6 items-center justify-center">
       <div className="bg-blue-200 p-4 m-3 text-center ">
         <Typography className="text-dark font-semibold">Visi</Typography>
         <List>
@@ -33,11 +33,11 @@ export default function VisiMisi() {
           </ListItem>
         </List>
       </div>
-      <div className="flex flex-col p-4 justify-center items-center">
+      <div className="flex flex-col justify-center items-center px-8">
         <Typography className="text-dark text-xl font-semibold mb-3">Kabinet</Typography>
         <Image
-          className="max-w-full h-auto"
-          src="/bem.png"
+          className="w-full h-auto"
+          src="/bem.jpg"
           alt="Logo Kabinet"
           width={300}
           height={300}
