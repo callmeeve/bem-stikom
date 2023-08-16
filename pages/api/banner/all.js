@@ -1,4 +1,4 @@
-import { prisma } from "../../../libs/prisma.libs";
+import { prisma } from "@/libs/prisma.libs";
 
 export default async function handler(req, res) {
   try {

@@ -74,7 +74,9 @@ const AdminLayout = ({ children }) => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex mx-auto mt-12">{children}</div>
+      <div className="flex flex-col mx-10 mt-12">
+        {children}
+      </div>
     </div>
   );
 };
