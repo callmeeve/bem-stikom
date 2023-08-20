@@ -1,15 +1,19 @@
 import UserLayout from "@/components/UserLayout";
 import VisiMisi from "@/components/VisiMisi";
 import React from "react";
-import AboutBem from "@/components/AboutBem";
 import { ProfileCard } from "@/components/ProfileCard";
+import CustomBanner from "@/components/CustomBanner";
+import AboutSection from "@/components/AboutSection";
 
 export default function About() {
   return (
     <UserLayout>
-      <AboutBem />
+      <CustomBanner/>
       <VisiMisi />
-      <ProfileCard />
+      <AboutSection>
+        <ProfileCard />
+        <ProfileCard />
+      </AboutSection>
     </UserLayout>
   );
 }

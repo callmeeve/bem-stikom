@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Carousel, Typography } from "@material-tailwind/react";
 
-export default function Banner() {
+const CarouselBanner = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -49,11 +49,11 @@ export default function Banner() {
               <Image
                 src={item.image}
                 alt="image 1"
-                className="w-full h-screen object-cover"
+                className="w-full h-[30rem] object-cover"
                 width={1920}
                 height={1080}
               />
-              <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/55">
+              <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/60">
                 <div className="w-3/4 text-center md:w-2/4">
                   <Typography className="mb-4 text-lg text-white font-bold">
                     BADAN EKSEKUTIF MAHASISWA
@@ -94,4 +94,6 @@ export default function Banner() {
       /> */}
     </Carousel>
   );
-}
+};
+
+export default CarouselBanner;

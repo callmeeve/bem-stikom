@@ -69,7 +69,7 @@ export default function VisiMisi() {
                   Kabinet
                 </Typography>
                 <Image
-                  className="max-w-full h-auto"
+                  className="w-full h-auto"
                   src={item.image}
                   alt="Logo Kabinet"
                   width={300}
