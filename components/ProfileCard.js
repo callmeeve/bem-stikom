@@ -6,20 +6,49 @@ import {
   Typography,
   Tooltip,
 } from "@material-tailwind/react";
+import { useState, useEffect } from "react";
 
 export function ProfileCard() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getStruktur = () => {
+    fetch("/api/struktur/all", {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        setData(response.data);
+        setLoading(false);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getStruktur();
+  }, []);
   return (
     <div className="flex flex-col-reverse md:flex-row px-3 py-6 items-center justify-center">
-      <Card className="w-96">
+      <Card className="w-96" >
+        <div className="flex flex-col-reverse md:flex-row">
+        {data.length > 0 ? (
+      data.map((item, index) => (
+        <div className="col" key={index}>
         <CardHeader floated={false} className="h-80">
-          <img src="/Jurnalistik.png" alt="profile-picture" />
+          <img src={item.image} alt="profile-picture" />
         </CardHeader>
         <CardBody className="text-center">
           <Typography variant="h4" color="blue-gray" className="mb-2">
-            Natalie Paisley
+            {item.name}
+          </Typography>
+          <Typography variant="h5" color="blue-gray" className="mb-1 font-medium">
+            {item.jabatan}
           </Typography>
           <Typography color="blue-gray" className="font-medium" textGradient>
-            CEO / Co-Founder
+            {item.periode}
           </Typography>
         </CardBody>
         <CardFooter className="flex justify-center gap-7 pt-2">
@@ -57,6 +86,12 @@ export function ProfileCard() {
             </Typography>
           </Tooltip>
         </CardFooter>
+        </div>
+      ))
+      ) : (
+        <div>Data Kosong</div>
+      )}
+        </div>
       </Card>
     </div>
   );

@@ -40,12 +40,12 @@ export default function VisiMisi() {
                   <ListItem className="py-1.5 px-3 text-sm font-normal text-blue-gray-900 hover:bg-transparent">
                     {item.visi}
                   </ListItem>
-                  <ListItem className="py-1.5 px-3 text-sm font-normal text-blue-gray-900 hover:bg-transparent">
+                  {/* <ListItem className="py-1.5 px-3 text-sm font-normal text-blue-gray-900 hover:bg-transparent">
                     Trash
                   </ListItem>
                   <ListItem className="py-1.5 px-3 text-sm font-normal text-blue-gray-900 hover:bg-transparent">
                     Settings
-                  </ListItem>
+                  </ListItem> */}
                 </List>
               </div>
               <div className="bg-green-200 p-4 m-3 text-center ">
@@ -56,12 +56,12 @@ export default function VisiMisi() {
                   <ListItem className="py-1.5 px-3 text-sm font-normal text-blue-gray-900 hover:bg-transparent">
                     {item.misi}
                   </ListItem>
-                  <ListItem className="py-1.5 px-3 text-sm font-normal text-blue-gray-900 hover:bg-transparent">
+                  {/* <ListItem className="py-1.5 px-3 text-sm font-normal text-blue-gray-900 hover:bg-transparent">
                     Trash
                   </ListItem>
                   <ListItem className="py-1.5 px-3 text-sm font-normal text-blue-gray-900 hover:bg-transparent">
                     Settings
-                  </ListItem>
+                  </ListItem> */}
                 </List>
               </div>
               <div className="flex flex-col justify-center items-center px-8">

@@ -12,7 +12,6 @@ export default function About() {
       <VisiMisi />
       <AboutSection>
         <ProfileCard />
-        <ProfileCard />
       </AboutSection>
     </UserLayout>
   );
